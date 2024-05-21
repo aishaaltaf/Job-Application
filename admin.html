@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <style>
+      .navbar {
+            margin: 0px;
+            background-color: #26244b;
+            color: #fff;
+            padding: 10px 0;
+            position: relative;
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            margin: 0;
+            padding: 0;
+            font-size: 42px;
+            margin-left: 100px;
+        }
+
+        .nav-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            margin-right: 100px;
+        }
+
+        .nav-links li {
+            display: inline;
+            margin-left: 20px;
+        }
+
+        .nav-links li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 22px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links li a:hover {
+            color: #ccc;
+        }
+
+        .nav-links li a.active {
+            color: #fff;
+            font-weight: bold;
+        }
+
+        
+
+        .container2 {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .recruiter {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        .btn-approve,
+        .btn-reject {
+            padding: 8px 16px;
+            margin-right: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-approve {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .btn-reject {
+            background-color: #f44336;
+            color: white;
+        }
+
+        .btn-approve:hover,
+        .btn-reject:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">JobHub</h1>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="joblist.html">Browse Jobs</a></li>
+                <li><a href="jobposting.html">Post a Job</a></li>
+                <li><a href="#">My Jobs</a></li>
+                <li><a href="signup.html">Signup</a></li>
+            </ul>
+        </nav>
+    <div class="container2">
+        <h1>Admin Panel</h1>
+        <div class="recruiter" id="recruiter1">
+            <span>Recruiter ID: 1</span>
+            <button class="btn-approve" onclick="approveRecruiter(1)">Approve</button>
+            <button class="btn-reject" onclick="rejectRecruiter(1)">Reject</button>
+        </div>
+        <div class="recruiter" id="recruiter2">
+            <span>Recruiter ID: 2</span>
+            <button class="btn-approve" onclick="approveRecruiter(2)">Approve</button>
+            <button class="btn-reject" onclick="rejectRecruiter(2)">Reject</button>
+        </div>
+       
+    </div>
+
+    <script>
+        function approveRecruiter(recruiterId) {
+            
+            document.getElementById('recruiter' + recruiterId).style.backgroundColor = '#90EE90';
+            alert("Recruiter with ID " + recruiterId + " has been approved.");
+        }
+
+        function rejectRecruiter(recruiterId) {
+            
+            document.getElementById('recruiter' + recruiterId).style.backgroundColor = '#FFB6C1';
+            alert("Recruiter with ID " + recruiterId + " has been rejected.");
+        }
+    </script>
+</body>
+</html>
+
